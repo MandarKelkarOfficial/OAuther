@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>OTP Verification</title>
+</head>
+
+<body>
+    <!-- <form action="/send_otp" method="POST">
+        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+        <input type="email" id="phoneNumber" name="email" placeholder="Enter your email">
+        <button id="sendOTP" type="submit">Send OTP</button>
+    </form> -->
+    <form action="https://api.web3forms.com/submit" method="POST">
+
+        <input type="hidden" name="access_key" value="2b0dbcc2-0baf-4954-b83a-ae99d11cc9d2">
+        <!-- <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE"> -->
+        <input type="text" name="name" required>
+        <input type="email" name="email" required>
+        
+        
+        <button type="submit">Submit Form</button>
+    
+    </form>
+    <script>
+        function generateCode() {
+            // Generate a random 4-digit code
+            var code = Math.floor(1000 + Math.random() * 9000);
+
+            // Update the input field with the generated code
+            document.getElementById("code").value = code;
+        }
+    </script>
+    <script src="https://web3forms.com/client/script.js" async defer></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</body>
+
+</html>

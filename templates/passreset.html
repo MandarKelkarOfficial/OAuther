@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Reset Password</title>
+    <style>
+        body {
+            background-image: url("/static/img/loginbg.jpg");
+            background-size: cover;
+        }
+
+        form {
+            width: 400px;
+            height: auto;
+            margin: auto;
+            margin-top: 100px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            opacity: 0.8;
+        }
+
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: inherit;
+        }
+
+        p {
+            color: #888;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        a {
+            color: #2488FF;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <form onsubmit="return resetPassword()">
+        <h2>Reset Password</h2>
+        <input type="password" placeholder="Enter new password" id="password" required>
+        <input type="password" placeholder="Confirm new password" id="confirmPassword" required>
+        <input type="submit" value="Reset Password">
+        <p><a href="login.html">Back to Login Page</a></p>
+    </form>
+
+    <script>
+        function resetPassword() {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match. Please try again.");
+                return false;
+            }
+
+            alert("Password reset successfully!");
+            window.location.href = "login.html";
+
+            return false;
+        }
+    </script>
+</body>
+
+</html>

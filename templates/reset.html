@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Forgot Password</title>
+    <style>
+        body {
+            background-image: url("/static/img/loginbg.jpg");
+            background-size: cover;
+        }
+
+        form {
+            width: 400px;
+            height: auto;
+            margin: auto;
+            margin-top: 100px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            /* slightly transparent white */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            opacity: 0.8;
+            /* adjust this value to change the opacity */
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: inherit;
+        }
+
+        p {
+            color: #888;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        a {
+            color: #2488FF;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <form onsubmit="return sendResetLink()">
+        <h2>Forgot Password</h2>
+        <input type="email" placeholder="Enter your email" id="email">
+        <input type="submit" value="Send Reset Link">
+        <p><a href="login.html">Back to Login Page</a></p>
+    </form>
+
+    <script>
+        function sendResetLink() {
+            var email = document.getElementById("email").value;
+
+            alert("A password reset link has been sent to your email.");
+
+            window.location.href = "mailotp.html";
+
+            return false;
+        }
+    </script>
+</body>
+
+</html>
